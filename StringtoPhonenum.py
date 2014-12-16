@@ -31,6 +31,7 @@ def nine():
 
 #converts string to number
 def getNumber(string): 
+#Uses a Dictonary for quick O(1) conversion.
     options = {'A' : two,
                'B' : two,
                'C' : two,
@@ -56,6 +57,7 @@ def getNumber(string):
                'X' : nine,
                'Y' : nine
         }
+#Iterates once through given string and does required conversions.
     charList = list(string)
     for index in charList:
         if(index.isdigit() or index == '-'):
@@ -63,8 +65,9 @@ def getNumber(string):
         else:
             options[index]()
         
-
-py3 = version_info[0] > 2 #tests that Python major version > 2
+#Tests that Python major version > 2
+#This is important in that the way input is done.
+py3 = version_info[0] > 2 
 
 if py3:
     response = input("Enter a string: ")
